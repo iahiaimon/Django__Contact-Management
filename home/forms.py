@@ -1,9 +1,10 @@
 from django import forms
+from . import models
 
-# from . import models , views
-from .models import ContactModel
+# from .models import ContactModel
+# from home.models import ContactModel
 
 class ContactForm(forms.ModelForm):
     class Meta:
-        model = ContactModel
-        feilds = ['name' , 'phone' , 'email' , 'title' , 'image']
+        model = models.ContactModel
+        fields = ['name' , 'phone' , 'email' , 'title' , 'image']

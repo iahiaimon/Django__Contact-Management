@@ -7,3 +7,5 @@ urlpatterns = [
     path('form/' , views.contact , name = "contact"),
 
 ]
+
+

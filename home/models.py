@@ -1,5 +1,4 @@
 from django.db import models
-from . import views , forms
 
 # Create your models here.
 

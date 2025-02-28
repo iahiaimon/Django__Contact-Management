@@ -4,19 +4,21 @@ from . import models , forms
 
 
 # Create your views here.
-def home(requaest):
-    return render(requaest , 'home.html')
+def home(request):
+    return render(request , 'home.html')
 
 
-def contact(requaest):
+def contact(request):
     form = forms.ContactForm()
 
-    if requaest.methon == 'POST':
-        form = form.ContactForm(requaest.POST , requaest.FILES)
+    if request.method == 'POST':
+        form = forms.ContactForm(request.POST , request.FILES)
         if form.is_valid():
             form.save()
-            return render(requaest , 'home.html')
+            return render(request , 'home.html')
+            # return redirect('home')
     else:
-        return render(requaest , 'form.html')
+        return render(request , 'form.html')
+        # return redirect('form')
 
-    return render(requaest, 'home.html')
+    return render(request, 'home.html')
